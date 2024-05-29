@@ -11,7 +11,7 @@ class Lesson extends Model
     protected $fillable = [
         'title',
         'content_type',
-        'content',
+        'content','section_id'
     ];
     public function section()
     {

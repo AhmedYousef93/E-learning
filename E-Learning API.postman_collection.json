@@ -1,0 +1,1258 @@
+{
+	"info": {
+		"_postman_id": "9f480bf5-a0dc-4c40-9b63-1d2c54fd4d4e",
+		"name": "E-Learning API",
+		"description": "Postman collection to test the E-Learning API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10166477"
+	},
+	"item": [
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/schools/{{school_id}}/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Course Name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Course Description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ahmed/Downloads/1654095244336.jpeg"
+								},
+								{
+									"key": "promotional_video",
+									"type": "file",
+									"src": [
+										"/C:/Users/Ahmed/Videos/Captures/إنشاء مكان - QUEUE and 21 more pages - Personal - Microsoft​ Edge 12_24_2022 7_31_46 PM.png",
+										"/C:/Users/Ahmed/Downloads/SampleVideo_1280x720_1mb.mp4"
+									]
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/schools/{{school_id}}/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/courses/{{course_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"courses",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Course Name\",\n  \"description\": \"Updated Course Description\",\n  \"price\": 120\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/courses/{{course_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"courses",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/courses/{{course_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"courses",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sections",
+			"item": [
+				{
+					"name": "Get All Sections",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/courses/{{course_id}}/sections",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"courses",
+								"{{course_id}}",
+								"sections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Section Title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Section Descriptio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/courses/{{course_id}}/sections",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"courses",
+								"{{course_id}}",
+								"sections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Section by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/courses/{{course_id}}/sections/{{section_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"courses",
+								"{{course_id}}",
+								"sections",
+								"{{section_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Section Title\",\n  \"description\": \"Updated Section Description\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/courses/{{course_id}}/sections/{{section_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"courses",
+								"{{course_id}}",
+								"sections",
+								"{{section_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Section",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/courses/{{course_id}}/sections/{{section_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"courses",
+								"{{course_id}}",
+								"sections",
+								"{{section_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lessons",
+			"item": [
+				{
+					"name": "Get All Lessons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/sections/{{section_id}}/lessons",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sections",
+								"{{section_id}}",
+								"lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Lesson Title\",\n  \"content\": \"Lesson Content\",\n  \"type\": \"text\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/sections/{{section_id}}/lessons",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sections",
+								"{{section_id}}",
+								"lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lesson by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/sections/{{section_id}}/lessons/{{lesson_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sections",
+								"{{section_id}}",
+								"lessons",
+								"{{lesson_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Lesson Title\",\n  \"content\": \"Updated Lesson Content\",\n  \"type\": \"text\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/sections/{{section_id}}/lessons/{{lesson_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sections",
+								"{{section_id}}",
+								"lessons",
+								"{{lesson_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/sections/{{section_id}}/lessons/{{lesson_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sections",
+								"{{section_id}}",
+								"lessons",
+								"{{lesson_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schools",
+			"item": [
+				{
+					"name": "Get All Schools",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schools",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create School",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"School Name\",\n  \"address\": \"School Address\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/schools",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit School",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated School Name\",\n  \"address\": \"Updated School Address\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/schools/{{school_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete School",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schools/{{school_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get All Students",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Student Name\",\n  \"email\": \"student@example.com\",\n  \"school_id\":1,\n  \"password\":\"ahmed8832\",\n  \"class_id\":1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Student Name\",\n  \"email\": \"updated_student@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/students/{{student_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"{{student_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/students/{{student_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"{{student_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "School Classes",
+			"item": [
+				{
+					"name": "List School Classes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/classes",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a New School Class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Class Name\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/classes",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View a School Class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin_token}}"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/classes/{{class_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"classes",
+								"{{class_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a School Class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Class Name\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/classes/{{class_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"classes",
+								"{{class_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a School Class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgDFhElKwsC1Aaipbp5qxNIt8mCzrLksHSVCPvbq860dc8a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin_token}}"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/schools/{{school_id}}/classes/{{class_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								"{{school_id}}",
+								"classes",
+								"{{class_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student to Class",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"student_id_here\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/schools/:school_id/classes/:class_id/add-student",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schools",
+								":school_id",
+								"classes",
+								":class_id",
+								"add-student"
+							],
+							"variable": [
+								{
+									"key": "school_id",
+									"value": ""
+								},
+								{
+									"key": "class_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "school_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "course_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "section_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "lesson_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "class_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "student_id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}

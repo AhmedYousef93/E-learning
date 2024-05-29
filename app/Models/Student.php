@@ -11,7 +11,7 @@ class Student extends Model
     protected $fillable = [
         'name',
         'email',
-        'class_id',
+        'class_id','password','school_id'
     ];
     public function school()
     {

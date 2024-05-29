@@ -14,6 +14,7 @@ class Course extends Model
         'promotional_video',
         'price',
         'description',
+        'school_id'
     ];
     public function school()
     {

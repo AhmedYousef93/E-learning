@@ -9,7 +9,8 @@ use App\Http\Controllers\Api\V1\{
     SectionController,
     CourseController,
     StudentController,
-    LoginController
+    LoginController,
+    SchoolClassController
 };
 
 /*
@@ -34,7 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // School routes
     Route::prefix('schools')->group(function () {
-        Route::apiResource('{school}/classes', SchoolController::class);
+        Route::post('{school}/classes', [SchoolController::class, 'addStudentToClass']);
         Route::apiResource('{school}/courses', CourseController::class);
     });
 
@@ -52,4 +53,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('sections')->group(function () {
         Route::apiResource('{section}/lessons', LessonController::class);
     });
+
+    Route::apiResource('schools.classes', SchoolClassController::class);
+    Route::post('classes/{class}/add-student', [SchoolClassController::class, 'addStudentToClass']);
 });
